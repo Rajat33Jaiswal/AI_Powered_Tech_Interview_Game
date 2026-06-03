@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+    <!-- Glow Effect -->
+    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="16" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <!-- Accent Gradient -->
+    <linearGradient id="neonGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="50%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+    <!-- Light Border Gradient -->
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#1d4ed8" stop-opacity="0.2" />
+    </linearGradient>
+  </defs>
+
+  <!-- Outer Rounded Square with border -->
+  <rect x="8" y="8" width="496" height="496" rx="128" fill="url(#bgGrad)" stroke="url(#borderGrad)" stroke-width="12" />
+
+  <!-- Hexagonal Tech grid accents (subtle) -->
+  <path d="M 256,48 L 436,152 L 436,360 L 256,464 L 76,360 L 76,152 Z" stroke="#1e293b" stroke-width="6" stroke-dasharray="16 12" fill="none" opacity="0.6" />
+
+  <!-- Dynamic Chat bubble + Terminal concept -->
+  <g filter="url(#neonGlow)">
+    <!-- Chat bubble backdrop -->
+    <path d="M 128,144 C 128,112 160,96 256,96 C 352,96 384,112 384,144 C 384,176 352,192 256,192 L 208,192 L 160,240 L 176,192 C 144,192 128,176 128,144 Z" fill="#6366f1" fill-opacity="0.15" stroke="#6366f1" stroke-width="4" opacity="0.4" />
+    
+    <!-- Central Glowing Terminal Code Block & AI Wave -->
+    <path d="M 160,192 L 220,256 L 160,320" stroke="url(#neonGrad)" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" />
+    
+    <!-- Pulsing cursor line -->
+    <line x1="256" y1="320" x2="336" y2="320" stroke="#ec4899" stroke-width="32" stroke-linecap="round" />
+  </g>
+
+  <!-- Small AI core light in the center -->
+  <circle cx="256" cy="256" r="16" fill="#ffffff" filter="url(#neonGlow)" />
+</svg>
